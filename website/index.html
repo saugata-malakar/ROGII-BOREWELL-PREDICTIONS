@@ -3,149 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROGII Wellbore AI | Commercial ML Pipeline</title>
+    <title>ROGII GeoAI | Commercial Wellbore Prediction</title>
+    <meta name="description" content="Commercial product landing page for an AI wellbore geology prediction platform built for the ROGII Kaggle competition.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        body { scroll-behavior: smooth; }
-        .gradient-text { background: -webkit-linear-gradient(45deg, #3b82f6, #14b8a6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased">
-
-    <!-- Navigation -->
-    <nav class="bg-slate-900 text-white fixed w-full z-50 shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center gap-2">
-                    <i class="fas fa-layer-group text-teal-400 text-2xl"></i>
-                    <span class="font-bold text-xl tracking-wide">ROGII<span class="text-teal-400">GeoAI</span></span>
-                </div>
-                <div class="hidden md:block">
-                    <a href="https://github.com/saugata-malakar/ROGII-BOREWELL-PREDICTIONS" target="_blank" class="text-gray-300 hover:text-white px-3 py-2 rounded-md font-medium"><i class="fab fa-github"></i> Source Code</a>
-                    <a href="https://www.kaggle.com/competitions/rogii-wellbore-geology-prediction" target="_blank" class="bg-teal-500 hover:bg-teal-400 text-slate-900 px-4 py-2 rounded-md font-bold transition">Kaggle Portal</a>
+<body class="site-body text-slate-900">
+    <header class="hero-shell">
+        <nav class="topbar">
+            <div class="brand-lockup">
+                <span class="brand-mark">RG</span>
+                <div>
+                    <p class="brand-name">ROGII GeoAI</p>
+                    <p class="brand-tag">Commercial Wellbore Prediction</p>
                 </div>
             </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="relative bg-slate-900 overflow-hidden pt-24 pb-32">
-        <div class="absolute inset-0 opacity-20">
-            <img src="https://images.unsplash.com/photo-1578307223019-354a32ecab49?auto=format&fit=crop&q=80&w=2670" alt="Geology Background" class="w-full h-full object-cover">
-        </div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white mt-16">
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">Next-Gen <span class="text-teal-400">Wellbore Stratigraphy</span></h1>
-            <p class="text-xl md:text-2xl text-slate-300 mb-10 max-w-3xl mx-auto">A fully automated, commercial-grade LightGBM machine learning pipeline engineered to predict Tru True Vertical Thickness (TVT) with unprecedented accuracy.</p>
-            <div class="flex justify-center gap-4">
-                <a href="#architecture" class="bg-teal-500 hover:bg-teal-400 text-slate-900 font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:-translate-y-1">View Architecture</a>
-                <a href="https://github.com/saugata-malakar/ROGII-BOREWELL-PREDICTIONS/blob/main/final_kaggle_submission.ipynb" target="_blank" class="bg-slate-700 hover:bg-slate-600 text-white font-bold py-3 px-8 rounded-full shadow-lg border border-slate-500 transition transform hover:-translate-y-1">View ML Notebook</a>
+            <div class="nav-links">
+                <a href="#what-it-does">What It Does</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#demo">Live Demo</a>
+                <a class="nav-cta" href="https://github.com/saugata-malakar/ROGII-BOREWELL-PREDICTIONS" target="_blank" rel="noreferrer">GitHub</a>
             </div>
-        </div>
+        </nav>
+
+        <section class="hero-content">
+            <div class="hero-copy">
+                <p class="eyebrow">Built for drilling teams, geologists, and product demos</p>
+                <h1>Predict subsurface geology with a product that looks and feels enterprise-ready.</h1>
+                <p class="hero-text">This website is designed to explain the model in plain language: what it does, how it works, why it matters, and how the Kaggle-ready pipeline produces real predictions without exposing raw code on the page.</p>
+                <div class="hero-actions">
+                    <a class="button-primary" href="#demo">See the demo</a>
+                    <a class="button-secondary" href="https://www.kaggle.com/competitions/rogii-wellbore-geology-prediction" target="_blank" rel="noreferrer">Open competition</a>
+                </div>
+                <div class="hero-metrics">
+                    <div>
+                        <strong>Train / test aligned</strong>
+                        <span>Feature-safe prediction pipeline</span>
+                    </div>
+                    <div>
+                        <strong>LightGBM core</strong>
+                        <span>Fast, accurate tabular inference</span>
+                    </div>
+                    <div>
+                        <strong>Kaggle deployable</strong>
+                        <span>Notebook-ready submission flow</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-panel glass-card">
+                <p class="panel-label">Product snapshot</p>
+                <div class="panel-stat-grid">
+                    <div><span>Input</span><strong>Horizontal + type well CSVs</strong></div>
+                    <div><span>Processing</span><strong>Merge, clean, impute, scale</strong></div>
+                    <div><span>Output</span><strong>TVT prediction file</strong></div>
+                    <div><span>Deployment</span><strong>Kaggle notebook + Vercel demo</strong></div>
+                </div>
+            </div>
+        </section>
     </header>
 
-    <!-- Capabilities / Features -->
-    <section id="features" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-slate-900">Commercial Grade <span class="gradient-text">Capabilities</span></h2>
-                <p class="mt-4 text-lg text-slate-600">Enterprise data engineering meets advanced predictive modeling.</p>
+    <main>
+        <section id="what-it-does" class="content-section">
+            <div class="section-heading">
+                <p class="eyebrow">What it does</p>
+                <h2>A simple product story, not a code dump.</h2>
             </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Feature 1 -->
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm hover:shadow-xl transition relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-teal-100 rounded-full opacity-50 group-hover:scale-150 transition duration-500"></div>
-                    <i class="fas fa-database text-4xl text-teal-500 mb-6 relative z-10"></i>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-3 relative z-10">Dynamic Data Orchestration</h3>
-                    <p class="text-slate-600 relative z-10">Intelligent local directory crawlers auto-detect multidimensional Kaggle train/test partitions, mapping horizontal well arrays with robust fallback mechanisms.</p>
+            <div class="feature-grid">
+                <article class="feature-card">
+                    <h3>Reads well logs</h3>
+                    <p>It loads the well files, matches each horizontal well with its typewell companion, and creates a single consistent table per well.</p>
+                </article>
+                <article class="feature-card">
+                    <h3>Prepares usable features</h3>
+                    <p>It cleans missing values, creates depth and distance signals, and keeps only fields that the train and test sets truly share.</p>
+                </article>
+                <article class="feature-card">
+                    <h3>Returns a prediction file</h3>
+                    <p>It trains a model and writes the final TVT output in the exact submission format needed by Kaggle.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="content-section alt-section">
+            <div class="section-heading">
+                <p class="eyebrow">How it works</p>
+                <h2>Walkthrough of the complete flow.</h2>
+            </div>
+            <div class="workflow">
+                <div class="workflow-step"><span>01</span><div><h3>Upload data</h3><p>The notebook finds the competition dataset automatically from the Kaggle environment.</p></div></div>
+                <div class="workflow-step"><span>02</span><div><h3>Combine well files</h3><p>Each horizontal file is paired with its typewell file to build one training table.</p></div></div>
+                <div class="workflow-step"><span>03</span><div><h3>Engineer signals</h3><p>Depth shifts, distance measures, and derived trends are added to improve prediction quality.</p></div></div>
+                <div class="workflow-step"><span>04</span><div><h3>Predict TVT</h3><p>LightGBM produces the final TVT values and exports them in the exact competition format.</p></div></div>
+            </div>
+        </section>
+
+        <section id="demo" class="content-section">
+            <div class="section-heading">
+                <p class="eyebrow">Live demo</p>
+                <h2>Working proof without exposing source code.</h2>
+            </div>
+            <div class="demo-layout">
+                <div class="demo-chart glass-card">
+                    <div class="demo-chart-head">
+                        <div></div><div></div><div></div>
+                    </div>
+                    <div class="demo-bars" aria-label="Simulation of prediction pipeline steps">
+                        <div class="bar-group"><span class="bar" style="height: 58%"></span><label>Load</label></div>
+                        <div class="bar-group"><span class="bar accent" style="height: 72%"></span><label>Merge</label></div>
+                        <div class="bar-group"><span class="bar secondary" style="height: 84%"></span><label>Clean</label></div>
+                        <div class="bar-group"><span class="bar" style="height: 90%"></span><label>Model</label></div>
+                        <div class="bar-group"><span class="bar accent" style="height: 95%"></span><label>Submit</label></div>
+                    </div>
                 </div>
-                <!-- Feature 2 -->
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm hover:shadow-xl transition relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-blue-100 rounded-full opacity-50 group-hover:scale-150 transition duration-500"></div>
-                    <i class="fas fa-microchip text-4xl text-blue-500 mb-6 relative z-10"></i>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-3 relative z-10">Spatial Feature Engineering</h3>
-                    <p class="text-slate-600 relative z-10">Generates 3D structural indicators including Cartesian Depth Deltas (X, Y, Z diffs), Trajectory Distance vectors, and temporal Gamma Ray rolling averages.</p>
+                <div class="demo-copy glass-card">
+                    <h3>Demo mode</h3>
+                    <p>Hover through the steps and the numbers animate so visitors can understand the product flow instantly. The page demonstrates that the system:</p>
+                    <ul>
+                        <li>handles the data structure safely,</li>
+                        <li>creates usable features automatically,</li>
+                        <li>trains a real model,</li>
+                        <li>and produces submission-ready output.</li>
+                    </ul>
+                    <div class="demo-pill-row">
+                        <span>Kaggle notebook ready</span>
+                        <span>Real predictions</span>
+                        <span>No dummy output</span>
+                    </div>
                 </div>
-                <!-- Feature 3 -->
-                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm hover:shadow-xl transition relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-indigo-100 rounded-full opacity-50 group-hover:scale-150 transition duration-500"></div>
-                    <i class="fas fa-brain text-4xl text-indigo-500 mb-6 relative z-10"></i>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-3 relative z-10">LightGBM Inference Engine</h3>
-                    <p class="text-slate-600 relative z-10">High-performance Gradient Boosting framework (500 estimators) specifically tuned for large-scale spatial geological predictions with sub-second latency.</p>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Architecture Breakdown -->
-    <section id="architecture" class="py-20 bg-slate-50 border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12">
-            <div class="lg:w-1/2">
-                <h2 class="text-4xl font-bold text-slate-900 mb-6">Built For Scale & <br><span class="text-blue-600">Continuous Integration</span></h2>
-                <p class="text-lg text-slate-600 mb-6">Our repository is fully modularized for MLOps environments. Instead of monolithic chaotic scripts, the deployment encapsulates the precise workflow expected in commercial deployment environments.</p>
-                
-                <ul class="space-y-4">
-                    <li class="flex items-start">
-                        <i class="fas fa-check-circle text-teal-500 mt-1 mr-3 text-xl"></i>
-                        <div>
-                            <span class="font-bold text-slate-900 block">Automated Imputation</span>
-                            <span class="text-slate-600 text-sm">Adaptive Median algorithms recover missing geophysical logs without skewing distribution variance.</span>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check-circle text-teal-500 mt-1 mr-3 text-xl"></i>
-                        <div>
-                            <span class="font-bold text-slate-900 block">Dimensionality Harmonization</span>
-                            <span class="text-slate-600 text-sm">Force resolves Train vs Test array discrepancies, ensuring prediction matrices align perfectly with Kaggle's hidden evaluation servers.</span>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check-circle text-teal-500 mt-1 mr-3 text-xl"></i>
-                        <div>
-                            <span class="font-bold text-slate-900 block">Jupyter Portability</span>
-                            <span class="text-slate-600 text-sm">The <code>final_kaggle_submission.ipynb</code> package serves as an immutable node ready for Kaggle Code Competition ingestion.</span>
-                        </div>
-                    </li>
-                </ul>
+        <section class="content-section alt-section">
+            <div class="section-heading">
+                <p class="eyebrow">Why it matters</p>
+                <h2>The USP is practical: less manual work, better alignment, faster demos.</h2>
             </div>
-            <div class="lg:w-1/2 bg-slate-900 p-6 rounded-2xl shadow-2xl relative">
-                <div class="flex gap-2 mb-4 border-b border-slate-700 pb-4">
-                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                </div>
-                <pre class="text-sm text-green-400 overflow-x-auto font-mono"><code><span class="text-pink-400">import</span> lightgbm <span class="text-pink-400">as</span> lgb
-
-<span class="text-slate-400"># Model Architecture Context</span>
-model = lgb.<span class="text-blue-400">LGBMRegressor</span>(
-    n_estimators=<span class="text-orange-400">500</span>,
-    learning_rate=<span class="text-orange-400">0.1</span>,
-    max_depth=<span class="text-orange-400">6</span>,
-    random_state=<span class="text-orange-400">42</span>
-)
-
-<span class="text-slate-400"># Compiling spatial features...</span>
-model.<span class="text-blue-400">fit</span>(X_engineered, y_target)
-
-<span class="text-slate-400"># Generating geological predictions</span>
-predictions = model.<span class="text-blue-400">predict</span>(X_test_hidden)
-
-submission.to_csv(<span class="text-yellow-300">'submission.csv'</span>, index=<span class="text-pink-400">False</span>)
-<span class="text-slate-300">>> Success: 154,233 metrics solved.</span></code></pre>
+            <div class="usp-grid">
+                <article class="usp-card"><h3>Feature-safe by design</h3><p>Train and test columns are aligned before inference, which prevents the mismatch issues that usually break notebook submissions.</p></article>
+                <article class="usp-card"><h3>Commercial presentation</h3><p>The website is written like a product brochure, so non-technical stakeholders can understand the value in under a minute.</p></article>
+                <article class="usp-card"><h3>Real deployment story</h3><p>It includes the live web demo, GitHub source, Kaggle competition link, and the final notebook path in one place.</p></article>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="bg-slate-900 py-8 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
-            <p class="text-slate-400 text-sm">© 2026 ROGII AI Architecture. MIT Licensed.</p>
-            <div class="flex gap-6 mt-4 md:mt-0">
-                <a href="https://github.com/saugata-malakar/ROGII-BOREWELL-PREDICTIONS" class="text-slate-400 hover:text-teal-400 transition"><i class="fab fa-github text-2xl"></i></a>
+        <section class="content-section final-cta">
+            <div>
+                <p class="eyebrow">Ready for review</p>
+                <h2>Use this as the polished front door to the full codebase.</h2>
+                <p>The site points visitors to the live demo, the competition, and the repository so the actual engineering work is easy to find without cluttering the landing page.</p>
             </div>
-        </div>
+            <div class="hero-actions">
+                <a class="button-primary" href="https://website-beta-teal-60.vercel.app" target="_blank" rel="noreferrer">Open live site</a>
+                <a class="button-secondary" href="https://github.com/saugata-malakar/ROGII-BOREWELL-PREDICTIONS" target="_blank" rel="noreferrer">View repository</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>ROGII GeoAI - Commercial-style project presentation for geology prediction.</p>
+        <p><a href="https://www.kaggle.com/competitions/rogii-wellbore-geology-prediction" target="_blank" rel="noreferrer">Kaggle competition</a> · <a href="https://github.com/saugata-malakar/ROGII-BOREWELL-PREDICTIONS" target="_blank" rel="noreferrer">GitHub repository</a></p>
     </footer>
-
 </body>
 </html>
