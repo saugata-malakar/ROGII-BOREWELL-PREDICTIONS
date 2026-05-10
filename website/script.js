@@ -1,5 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
     const pills = document.querySelectorAll('.demo-pill-row span');
+    const consoleRows = document.querySelectorAll('.console-row');
+
+    consoleRows.forEach((row, index) => {
+        row.animate([
+            { transform: 'translateX(-12px)', opacity: 0 },
+            { transform: 'translateX(0)', opacity: 1 }
+        ], {
+            duration: 500,
+            delay: index * 180,
+            fill: 'forwards',
+            easing: 'ease-out'
+        });
+    });
+
     pills.forEach((pill, index) => {
         pill.style.transform = 'translateY(10px)';
         pill.style.opacity = '0';

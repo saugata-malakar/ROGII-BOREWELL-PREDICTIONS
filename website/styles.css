@@ -274,12 +274,59 @@ body.site-body {
     grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.problem-grid {
+    display: grid;
+    gap: 1.2rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .feature-card,
 .usp-card,
+.problem-card,
 .workflow-step,
 .demo-copy,
 .final-cta {
     padding: 1.5rem;
+}
+
+.problem-card {
+    border-radius: 1.5rem;
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    background: rgba(255, 255, 255, 0.92);
+}
+
+.problem-card.danger {
+    background: linear-gradient(180deg, rgba(254, 242, 242, 0.95), rgba(255, 255, 255, 0.95));
+}
+
+.problem-card.warning {
+    background: linear-gradient(180deg, rgba(255, 251, 235, 0.96), rgba(255, 255, 255, 0.95));
+}
+
+.problem-card.success {
+    background: linear-gradient(180deg, rgba(236, 253, 245, 0.96), rgba(255, 255, 255, 0.95));
+}
+
+.card-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.08);
+    color: #0f172a;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.9rem;
+}
+
+.problem-card h3 {
+    color: #0f172a;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
 }
 
 .feature-card h3,
@@ -348,11 +395,38 @@ body.site-body {
     background: #cbd5e1;
 }
 
+.demo-console {
+    display: grid;
+    gap: 0.65rem;
+    margin-bottom: 1.25rem;
+}
+
+.console-row {
+    border-radius: 1rem;
+    padding: 0.85rem 1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    color: #0f172a;
+}
+
+.console-row.ok {
+    background: #ecfdf5;
+    border-color: #a7f3d0;
+}
+
+.console-row.warn {
+    background: #fffbeb;
+    border-color: #fde68a;
+}
+
 .demo-bars {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 1rem;
-    min-height: 280px;
+    min-height: 220px;
     align-items: end;
 }
 
@@ -431,6 +505,7 @@ body.site-body {
     .demo-layout,
     .feature-grid,
     .usp-grid,
+    .problem-grid,
     .workflow,
     .final-cta {
         grid-template-columns: 1fr;

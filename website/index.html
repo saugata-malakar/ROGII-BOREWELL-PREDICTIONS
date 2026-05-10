@@ -34,7 +34,7 @@
             <div class="hero-copy">
                 <p class="eyebrow">Built for drilling teams, geologists, and product demos</p>
                 <h1>Predict subsurface geology with a product that looks and feels enterprise-ready.</h1>
-                <p class="hero-text">This website is designed to explain the model in plain language: what it does, how it works, why it matters, and how the Kaggle-ready pipeline produces real predictions without exposing raw code on the page.</p>
+                <p class="hero-text">This website explains the model in plain language: what it does, how it detects the real failure points in the dataset, how it resolves them, and how the Kaggle-ready pipeline produces real predictions without exposing raw code on the page.</p>
                 <div class="hero-actions">
                     <a class="button-primary" href="#demo">See the demo</a>
                     <a class="button-secondary" href="https://www.kaggle.com/competitions/rogii-wellbore-geology-prediction" target="_blank" rel="noreferrer">Open competition</a>
@@ -88,45 +88,76 @@
             </div>
         </section>
 
-        <section id="how-it-works" class="content-section alt-section">
+        <section id="problem" class="content-section alt-section">
+            <div class="section-heading">
+                <p class="eyebrow">Problem detected</p>
+                <h2>What was broken, and how the product fixes it.</h2>
+            </div>
+            <div class="problem-grid">
+                <article class="problem-card danger">
+                    <p class="card-badge">Detected issue</p>
+                    <h3>Train and test did not match</h3>
+                    <p>The model initially saw different columns in training and testing data, which would normally break inference or create unusable predictions.</p>
+                </article>
+                <article class="problem-card warning">
+                    <p class="card-badge">Detected issue</p>
+                    <h3>Data lived in multiple well files</h3>
+                    <p>Each well arrives as separate horizontal and typewell CSV files, so the app had to pair them correctly before the model could work.</p>
+                </article>
+                <article class="problem-card success">
+                    <p class="card-badge">Solved by the product</p>
+                    <h3>Feature alignment and safe inference</h3>
+                    <p>The pipeline keeps only shared fields, imputes missing values, engineers stable features, and produces a submission file in the competition format.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="content-section">
             <div class="section-heading">
                 <p class="eyebrow">How it works</p>
                 <h2>Walkthrough of the complete flow.</h2>
             </div>
             <div class="workflow">
-                <div class="workflow-step"><span>01</span><div><h3>Upload data</h3><p>The notebook finds the competition dataset automatically from the Kaggle environment.</p></div></div>
-                <div class="workflow-step"><span>02</span><div><h3>Combine well files</h3><p>Each horizontal file is paired with its typewell file to build one training table.</p></div></div>
-                <div class="workflow-step"><span>03</span><div><h3>Engineer signals</h3><p>Depth shifts, distance measures, and derived trends are added to improve prediction quality.</p></div></div>
-                <div class="workflow-step"><span>04</span><div><h3>Predict TVT</h3><p>LightGBM produces the final TVT values and exports them in the exact competition format.</p></div></div>
+                <div class="workflow-step"><span>01</span><div><h3>Detect the issue</h3><p>The site explains the actual bottlenecks first: file pairing, hidden test structure, and feature mismatch.</p></div></div>
+                <div class="workflow-step"><span>02</span><div><h3>Normalize the inputs</h3><p>Each horizontal file is paired with its typewell file to build one training table per well.</p></div></div>
+                <div class="workflow-step"><span>03</span><div><h3>Stabilize the features</h3><p>Missing values are filled and only shared columns survive, so train and test stay aligned.</p></div></div>
+                <div class="workflow-step"><span>04</span><div><h3>Deliver the output</h3><p>LightGBM generates real TVT predictions and exports the exact submission format the competition expects.</p></div></div>
             </div>
         </section>
 
         <section id="demo" class="content-section">
             <div class="section-heading">
                 <p class="eyebrow">Live demo</p>
-                <h2>Working proof without exposing source code.</h2>
+                <h2>A product-style console that shows the pipeline working.</h2>
             </div>
             <div class="demo-layout">
                 <div class="demo-chart glass-card">
                     <div class="demo-chart-head">
                         <div></div><div></div><div></div>
                     </div>
+                    <div class="demo-console">
+                        <div class="console-row ok">Dataset scan complete: train and test folders detected.</div>
+                        <div class="console-row warn">Mismatch found: non-shared columns removed before inference.</div>
+                        <div class="console-row ok">Feature map aligned: imputation and scaling applied safely.</div>
+                        <div class="console-row ok">Model online: LightGBM predicting TVT for each well segment.</div>
+                        <div class="console-row ok">Submission ready: output generated in Kaggle format.</div>
+                    </div>
                     <div class="demo-bars" aria-label="Simulation of prediction pipeline steps">
-                        <div class="bar-group"><span class="bar" style="height: 58%"></span><label>Load</label></div>
-                        <div class="bar-group"><span class="bar accent" style="height: 72%"></span><label>Merge</label></div>
-                        <div class="bar-group"><span class="bar secondary" style="height: 84%"></span><label>Clean</label></div>
-                        <div class="bar-group"><span class="bar" style="height: 90%"></span><label>Model</label></div>
-                        <div class="bar-group"><span class="bar accent" style="height: 95%"></span><label>Submit</label></div>
+                        <div class="bar-group"><span class="bar" style="height: 58%"></span><label>Scan</label></div>
+                        <div class="bar-group"><span class="bar accent" style="height: 72%"></span><label>Pair</label></div>
+                        <div class="bar-group"><span class="bar secondary" style="height: 84%"></span><label>Align</label></div>
+                        <div class="bar-group"><span class="bar" style="height: 90%"></span><label>Predict</label></div>
+                        <div class="bar-group"><span class="bar accent" style="height: 95%"></span><label>Export</label></div>
                     </div>
                 </div>
                 <div class="demo-copy glass-card">
-                    <h3>Demo mode</h3>
-                    <p>Hover through the steps and the numbers animate so visitors can understand the product flow instantly. The page demonstrates that the system:</p>
+                    <h3>What the demo proves</h3>
+                    <p>The page makes the value visible immediately. It shows that the system can:</p>
                     <ul>
-                        <li>handles the data structure safely,</li>
-                        <li>creates usable features automatically,</li>
-                        <li>trains a real model,</li>
-                        <li>and produces submission-ready output.</li>
+                        <li>detect bad structure before inference,</li>
+                        <li>pair the correct well files together,</li>
+                        <li>resolve feature mismatch safely,</li>
+                        <li>and generate a real submission-ready output.</li>
                     </ul>
                     <div class="demo-pill-row">
                         <span>Kaggle notebook ready</span>
@@ -140,12 +171,12 @@
         <section class="content-section alt-section">
             <div class="section-heading">
                 <p class="eyebrow">Why it matters</p>
-                <h2>The USP is practical: less manual work, better alignment, faster demos.</h2>
+                <h2>The USP is practical: fewer failures, clearer demos, real output.</h2>
             </div>
             <div class="usp-grid">
-                <article class="usp-card"><h3>Feature-safe by design</h3><p>Train and test columns are aligned before inference, which prevents the mismatch issues that usually break notebook submissions.</p></article>
-                <article class="usp-card"><h3>Commercial presentation</h3><p>The website is written like a product brochure, so non-technical stakeholders can understand the value in under a minute.</p></article>
-                <article class="usp-card"><h3>Real deployment story</h3><p>It includes the live web demo, GitHub source, Kaggle competition link, and the final notebook path in one place.</p></article>
+                <article class="usp-card"><h3>Failure-aware</h3><p>The site highlights the exact issues that can break a Kaggle run, then shows how the pipeline handles them.</p></article>
+                <article class="usp-card"><h3>Decision-friendly</h3><p>Non-technical visitors can understand the product value, the workflow, and the result without reading code.</p></article>
+                <article class="usp-card"><h3>Deployment-ready</h3><p>The repo, notebook, and Vercel site work together as one presentation layer for the full project.</p></article>
             </div>
         </section>
 
